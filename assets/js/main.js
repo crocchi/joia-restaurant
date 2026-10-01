@@ -57,14 +57,16 @@
   const day = now.getDay();
   const minutes = now.getHours() * 60 + now.getMinutes();
 
-  const rows = document.querySelectorAll(".hours dl > div");
-  if (rows[ROW_FOR_DAY[day]]) rows[ROW_FOR_DAY[day]].classList.add("is-today");
-
   const status = document.getElementById("today-status");
-  const isOpen = SCHEDULE[day].some(([from, to]) => minutes >= from && minutes < to);
-  status.textContent = isOpen ? "● Aperto ora" : "● Chiuso ora";
-  status.classList.add(isOpen ? "open" : "closed");
-  status.hidden = false;
+  if (status) {
+    const rows = document.querySelectorAll(".hours dl > div");
+    if (rows[ROW_FOR_DAY[day]]) rows[ROW_FOR_DAY[day]].classList.add("is-today");
+
+    const isOpen = SCHEDULE[day].some(([from, to]) => minutes >= from && minutes < to);
+    status.textContent = isOpen ? "● Aperto ora" : "● Chiuso ora";
+    status.classList.add(isOpen ? "open" : "closed");
+    status.hidden = false;
+  }
 
   // Modulo partner: niente backend, apre il client email con la richiesta precompilata.
   // TODO: indirizzo reale; in alternativa collegare un servizio form (Formspree, Netlify Forms…).
@@ -72,7 +74,7 @@
   const form = document.getElementById("partner-form");
   const msg = document.getElementById("form-msg");
 
-  form.addEventListener("submit", (e) => {
+  if (form) form.addEventListener("submit", (e) => {
     e.preventDefault();
     const required = form.querySelectorAll("[required]");
     let firstInvalid = null;
@@ -108,5 +110,5 @@
   });
 
   // Anno nel footer
-  document.getElementById("year").textContent = now.getFullYear();
+  document.querySelectorAll(".year").forEach((el) => { el.textContent = now.getFullYear(); });
 })();
