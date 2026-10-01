@@ -66,6 +66,47 @@
   status.classList.add(isOpen ? "open" : "closed");
   status.hidden = false;
 
+  // Modulo partner: niente backend, apre il client email con la richiesta precompilata.
+  // TODO: indirizzo reale; in alternativa collegare un servizio form (Formspree, Netlify Forms…).
+  const PARTNER_EMAIL = "partner@joiatenerife.com";
+  const form = document.getElementById("partner-form");
+  const msg = document.getElementById("form-msg");
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const required = form.querySelectorAll("[required]");
+    let firstInvalid = null;
+    required.forEach((el) => {
+      const ok = el.type === "checkbox" ? el.checked : el.checkValidity() && el.value.trim() !== "";
+      el.classList.toggle("invalid", !ok);
+      if (!ok && !firstInvalid) firstInvalid = el;
+    });
+    if (firstInvalid) {
+      msg.textContent = "Compila i campi obbligatori e accetta il trattamento dei dati.";
+      msg.className = "form-msg error";
+      firstInvalid.focus();
+      return;
+    }
+
+    const d = new FormData(form);
+    const body = [
+      "Nome: " + d.get("nome"),
+      "Email: " + d.get("email"),
+      "Telefono: " + (d.get("telefono") || "-"),
+      "Profilo: " + d.get("profilo"),
+      "Capitale: " + d.get("capitale"),
+      "",
+      d.get("messaggio") || "",
+    ].join("\n");
+
+    window.location.href = "mailto:" + PARTNER_EMAIL +
+      "?subject=" + encodeURIComponent("Richiesta partnership JOIA Tenerife - " + d.get("nome")) +
+      "&body=" + encodeURIComponent(body);
+
+    msg.textContent = "Grazie! Si sta aprendo la tua app email: invia il messaggio per completare la richiesta.";
+    msg.className = "form-msg ok";
+  });
+
   // Anno nel footer
   document.getElementById("year").textContent = now.getFullYear();
 })();
