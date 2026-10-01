@@ -62,9 +62,11 @@
 
   const status = document.getElementById("today-status");
   const isOpen = SCHEDULE[day].some(([from, to]) => minutes >= from && minutes < to);
-  status.textContent = isOpen ? "● Aperto ora" : "● Chiuso ora";
-  status.classList.add(isOpen ? "open" : "closed");
-  status.hidden = false;
+  if (status) {
+    status.textContent = isOpen ? "● Aperto ora" : "● Chiuso ora";
+    status.classList.add(isOpen ? "open" : "closed");
+    status.hidden = false;
+  }
 
   // Anno nel footer
   document.getElementById("year").textContent = now.getFullYear();

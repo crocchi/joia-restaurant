@@ -462,6 +462,39 @@ h1, h2, h3 {
 }
 .footer-legal { margin: .5rem 0 0; font-size: .82rem; opacity: .75; }
 
+/* ---------- Partner ---------- */
+
+.site-nav a[aria-current="page"]::after { transform: scaleX(1); }
+.partner-hero .hero-copy h1 { font-size: clamp(2.8rem, 6vw, 5.1rem); }
+.partner-media figcaption {
+  position: relative;
+  margin: -2rem 1.5rem 0;
+  padding: 1.2rem 1.5rem;
+  background: var(--navy);
+  color: var(--cream);
+  border-radius: 14px;
+  font-size: 1.05rem;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+.partner-role {
+  margin: 0 0 .8rem;
+  font-size: .75rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+}
+.partner-collaboration .card p:last-child { margin-bottom: 0; }
+.partner-note { max-width: 850px; margin: 2rem 0 0; font-size: .95rem; }
+.partner-process .values { margin-top: 2.5rem; }
+.partner-contact { background: var(--yellow); padding: clamp(4rem, 8vw, 6rem) 0; }
+.partner-contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem 4rem; }
+.partner-contact-inner p:not(.eyebrow) { margin-top: 0; }
+.partner-contact-inner .partner-email { margin: 1rem 0 0; overflow-wrap: anywhere; }
+
+@media (max-width: 900px) {
+  .partner-contact-inner { grid-template-columns: 1fr; }
+}
+
 /* ---------- Reveal on scroll ---------- */
 
 .reveal {
