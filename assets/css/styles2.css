@@ -77,6 +77,7 @@ h2 { font-size: clamp(34px, 3.7vw, 50px); line-height: 1.18; letter-spacing: -.0
 .contact2 > p:not(.kicker) { font-size: 14px; color: var(--muted); margin-top: 26px; }
 .contact-email { display: inline-block; font-size: clamp(17px, 2.5vw, 27px); color: var(--blue); text-decoration: none; border-bottom: 1px solid #a0bada; padding-bottom: 10px; margin-top: 25px; overflow-wrap: anywhere; }
 .contact-email span { padding-left: 12px; }
+.contact-whatsapp { margin-top: 28px; }
 .footer2 { border-top: 1px solid var(--light-blue); }
 .footer-top { display: flex; align-items: center; justify-content: space-between; gap: 25px; padding-block: 36px; }
 .footer-top > p { font: 21px/1.4 var(--serif); color: var(--blue); }
