@@ -1,5 +1,11 @@
 (function () {
   "use strict";
+  const language = document.documentElement.lang;
+  const labels = {
+    en: { open: "Open menu", close: "Close menu", openNow: "● Open now", closedNow: "● Closed now" },
+    it: { open: "Apri menu", close: "Chiudi menu", openNow: "● Aperto ora", closedNow: "● Chiuso ora" },
+    es: { open: "Abrir menú", close: "Cerrar menú", openNow: "● Abierto ahora", closedNow: "● Cerrado ahora" }
+  }[language] || { open: "Open menu", close: "Close menu", openNow: "● Open now", closedNow: "● Closed now" };
 
   // Menu mobile
   const toggle = document.querySelector(".nav-toggle");
@@ -7,7 +13,7 @@
 
   function setNav(open) {
     toggle.setAttribute("aria-expanded", String(open));
-    toggle.setAttribute("aria-label", open ? "Chiudi menu" : "Apri menu");
+    toggle.setAttribute("aria-label", open ? labels.close : labels.open);
     nav.classList.toggle("open", open);
   }
 
@@ -63,7 +69,7 @@
   const status = document.getElementById("today-status");
   const isOpen = SCHEDULE[day].some(([from, to]) => minutes >= from && minutes < to);
   if (status) {
-    status.textContent = isOpen ? "● Aperto ora" : "● Chiuso ora";
+    status.textContent = isOpen ? labels.openNow : labels.closedNow;
     status.classList.add(isOpen ? "open" : "closed");
     status.hidden = false;
   }

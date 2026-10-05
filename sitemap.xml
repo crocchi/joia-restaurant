@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='utf-8'?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://www.joia-pizzeria.com/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.joia-pizzeria.com/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.joia-pizzeria.com/it/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.joia-pizzeria.com/es/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.joia-pizzeria.com/" />
+  </url>
+  <url>
+    <loc>https://www.joia-pizzeria.com/it/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.joia-pizzeria.com/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.joia-pizzeria.com/it/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.joia-pizzeria.com/es/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.joia-pizzeria.com/" />
+  </url>
+  <url>
+    <loc>https://www.joia-pizzeria.com/es/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.joia-pizzeria.com/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.joia-pizzeria.com/it/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.joia-pizzeria.com/es/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.joia-pizzeria.com/" />
+  </url>
+  <url>
+    <loc>https://www.joia-pizzeria.com/partner.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.joia-pizzeria.com/partner.html" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.joia-pizzeria.com/it/partner.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.joia-pizzeria.com/es/partner.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.joia-pizzeria.com/partner.html" />
+  </url>
+  <url>
+    <loc>https://www.joia-pizzeria.com/it/partner.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.joia-pizzeria.com/partner.html" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.joia-pizzeria.com/it/partner.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.joia-pizzeria.com/es/partner.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.joia-pizzeria.com/partner.html" />
+  </url>
+  <url>
+    <loc>https://www.joia-pizzeria.com/es/partner.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.joia-pizzeria.com/partner.html" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.joia-pizzeria.com/it/partner.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.joia-pizzeria.com/es/partner.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.joia-pizzeria.com/partner.html" />
+  </url>
+</urlset>
