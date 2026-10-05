@@ -3,201 +3,90 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>JOIA Pasta Bar — Italian pasta. Joia style.</title>
-  <meta name="description" content="JOIA Pasta Bar: pasta italiana fresca, servita in bowl. Rigatoni, nduja, stracciatella e tutti i sapori del Sud.">
-  <meta name="theme-color" content="#F7C21A">
-
+  <title>JOIA Pizza Bar — The joy of pizza</title>
+  <meta name="description" content="JOIA Pizza Bar: un progetto di ospitalità ispirato a Capri, tra cucina italiana, pizza e atmosfera mediterranea. Scopri il progetto e diventa partner.">
+  <meta name="theme-color" content="#004AAD">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles2.css">
+  <script src="assets/js/main2.js" defer></script>
 </head>
 <body>
-
-  <!-- SVG riutilizzabili: limone con foglie (motivo della bowl) -->
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-    <defs>
-      <symbol id="lemon-branch" viewBox="0 0 120 200">
-        <path d="M60 0 C58 40 62 80 56 120" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-        <path d="M59 22 C40 14 22 22 14 38 C32 42 50 36 59 22Z" fill="var(--leaf)"/>
-        <path d="M60 40 C78 30 98 34 108 50 C90 56 70 52 60 40Z" fill="var(--leaf)"/>
-        <path d="M58 64 C40 58 24 66 18 82 C36 84 52 78 58 64Z" fill="var(--leaf)"/>
-        <path d="M58 86 C76 78 94 84 102 98 C84 104 66 100 58 86Z" fill="var(--leaf)"/>
-        <ellipse cx="56" cy="152" rx="28" ry="40" fill="var(--lemon)" stroke="var(--lemon-dark)" stroke-width="2.5"/>
-        <path d="M56 112 l0 -6" stroke="var(--lemon-dark)" stroke-width="3" stroke-linecap="round"/>
-        <path d="M44 140 C46 128 52 122 60 120" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="3" stroke-linecap="round"/>
-      </symbol>
-    </defs>
-  </svg>
-
-  <header class="site-header" id="top">
-    <div class="container header-inner">
-      <a href="#top" class="brand" aria-label="JOIA Pasta Bar, torna su">
-        <span class="brand-name">JOIA</span>
-        <span class="brand-sub">Pasta Bar</span>
+  <a class="skip-link" href="#contenuto">Vai al contenuto</a>
+  <header class="header" id="top">
+    <div class="shell header-inner">
+      <a class="logo" href="index2.html" aria-label="JOIA Pizza Bar, home">
+        <img src="assets/img/joia-logo-pdf.png" alt="JOIA Tenerife Pizza Bar" width="607" height="430">
       </a>
-
-      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Apri menu">
-        <span></span><span></span><span></span>
-      </button>
-
-      <nav class="site-nav" id="site-nav">
-        <a href="#chi-siamo">Chi siamo</a>
-        <a href="#orari">Orari</a>
-        <a href="#contatti">Contatti</a>
-        <a href="partner.html">Partner</a>
-        <!-- TODO: numero di telefono reale -->
-        <a href="tel:+390000000000" class="btn btn-navy btn-sm">Chiamaci</a>
+      <button class="menu-toggle" aria-controls="navigation" aria-expanded="false" aria-label="Apri menu"><span></span><span></span></button>
+      <nav id="navigation" class="navigation" aria-label="Menu principale">
+        <a href="#progetto">Il progetto</a>
+        <a href="#atmosfera">Atmosfera</a>
+        <a href="#partner">Partner</a>
+        <a class="button button-small" href="#contatti">Parliamone <span aria-hidden="true">↗</span></a>
       </nav>
     </div>
   </header>
 
-  <main>
-    <!-- HERO -->
-    <section class="hero">
-      <div class="watermark" aria-hidden="true">
-        <span>JOIA</span><span>JOIA</span><span>JOIA</span><span>JOIA</span>
-      </div>
-
-      <div class="container hero-inner">
-        <div class="hero-copy">
-          <p class="eyebrow">Italian pasta · Joia style</p>
-          <h1>Pasta vera,<br>gusto pieno.</h1>
-          <p class="hero-lead">
-            Rigatoni al dente, sughi preparati ogni giorno e ingredienti del Sud Italia.
-            Serviti caldi in bowl, da gustare qui o da portare via.
-          </p>
-          <div class="hero-ctas">
-            <a href="#orari" class="btn btn-navy">Orari &amp; dove siamo</a>
-            <a href="#chi-siamo" class="btn btn-outline">Scopri JOIA</a>
-          </div>
-          <div class="tricolore" aria-hidden="true"><i></i><i></i><i></i></div>
+  <main id="contenuto">
+    <section class="hero2" aria-labelledby="hero-title">
+      <div class="shell hero-grid">
+        <div class="hero-copy2">
+          <p class="kicker"><span aria-hidden="true"></span> Italian soul. Mediterranean spirit.</p>
+          <h1 id="hero-title">Un angolo<br>di Capri.<br><em>Tutta la joia.</em></h1>
+          <p class="intro">La cucina italiana, il piacere di stare insieme e quell'atmosfera che sa già di vacanza. Benvenuto nel mondo JOIA.</p>
+          <a class="button" href="#progetto">Entra nel progetto <span aria-hidden="true">↗</span></a>
+          <div class="hero-signature"><span>Pizza · Cucina · Ospitalità</span><span class="signature-line" aria-hidden="true"></span><span>01 / JOIA</span></div>
         </div>
-
-        <figure class="hero-media">
-          <img src="assets/img/nduja-stracciatella.jpg"
-               alt="Bowl JOIA di rigatoni con nduja, stracciatella, pomodoro e basilico"
-               width="1254" height="1254">
-          <svg class="lemon lemon-a" aria-hidden="true"><use href="#lemon-branch"/></svg>
-          <svg class="lemon lemon-b" aria-hidden="true"><use href="#lemon-branch"/></svg>
+        <figure class="hero-photo">
+          <img src="assets/img/joia-terrazza.jpg" alt="La terrazza JOIA con tavoli bianchi e dettagli blu, dal progetto presentato nel PDF" width="757" height="410" fetchpriority="high">
+          <figcaption><span>La nostra ispirazione</span><strong>Il Mediterraneo, a tavola.</strong></figcaption>
+          <div class="round-seal" aria-hidden="true">THE JOY<br><i>of</i><br>PIZZA</div>
         </figure>
       </div>
     </section>
 
-    <!-- CHI SIAMO -->
-    <section class="about" id="chi-siamo">
-      <svg class="lemon lemon-deco" aria-hidden="true"><use href="#lemon-branch"/></svg>
-      <div class="container about-inner">
-        <div class="section-head">
-          <p class="eyebrow">Chi siamo</p>
-          <h2>La gioia di un piatto di pasta fatto bene.</h2>
-        </div>
+    <div class="brand-band" aria-label="L'identità JOIA"><span>Un'anima italiana</span><span aria-hidden="true">✳</span><span>Un'ispirazione mediterranea</span><span aria-hidden="true">✳</span><span>The joy of pizza</span></div>
 
-        <div class="about-text reveal">
-          <!-- TODO: testo definitivo dal cliente -->
-          <p>
-            <strong>JOIA</strong> nasce da un'idea semplice: portare la pasta italiana di qualità
-            fuori dalle cucine di casa, senza perdere niente per strada. Ricette della tradizione,
-            reinterpretate con un tocco contemporaneo e servite veloci, in una bowl da tenere in mano.
-          </p>
-          <p>
-            Selezioniamo formati trafilati al bronzo, latticini freschi, nduja calabrese e pomodori
-            del Sud. Ogni sugo viene preparato in giornata, ogni piatto è montato al momento.
-          </p>
-        </div>
+    <section class="section shell story" id="progetto">
+      <div class="story-heading"><p class="kicker">01 — Il progetto</p><h2>Non solo un luogo.<br><em>Un modo di stare bene.</em></h2></div>
+      <div class="story-text"><p>JOIA nasce da una visione di ospitalità che unisce la cucina italiana al fascino senza tempo di Capri. La pizza è al centro di un'esperienza fatta di gusto, cura degli spazi e convivialità.</p><p>Un'identità mediterranea che prende forma nei dettagli: il blu del mare, i toni chiari, l'accoglienza e il piacere di condividere la tavola.</p><a class="text-link" href="#atmosfera">Scopri l'atmosfera <span aria-hidden="true">↗</span></a></div>
+    </section>
 
-        <ul class="values">
-          <li class="value reveal">
-            <span class="value-num">01</span>
-            <h3>Ingredienti italiani</h3>
-            <p>Materie prime scelte da piccoli produttori del Sud Italia.</p>
-          </li>
-          <li class="value reveal">
-            <span class="value-num">02</span>
-            <h3>Fatto al momento</h3>
-            <p>Pasta cotta espressa e sughi preparati ogni mattina.</p>
-          </li>
-          <li class="value reveal">
-            <span class="value-num">03</span>
-            <h3>Qui o da asporto</h3>
-            <p>Siediti da noi o porta JOIA ovunque tu vada.</p>
-          </li>
-        </ul>
+    <section class="atmosphere" id="atmosfera">
+      <div class="shell section">
+        <div class="section-top"><div><p class="kicker">02 — Il mondo JOIA</p><h2>Il blu. La luce.<br><em>La voglia di restare.</em></h2></div><p>Spazi e suggestioni dal progetto JOIA.<br>Un piccolo viaggio nella nostra identità.</p></div>
+        <div class="photo-grid">
+          <figure class="space-photo"><img src="assets/img/joia-interni.jpg" alt="Interni JOIA con sedute blu, tavoli chiari e dettagli mediterranei" width="760" height="553" loading="lazy"><figcaption><span>01 / Gli spazi</span><h3>L'eleganza della semplicità.</h3></figcaption></figure>
+          <figure class="space-photo"><img src="assets/img/joia-forno.jpg" alt="Il forno del progetto JOIA con bancone decorato in bianco e blu" width="757" height="553" loading="lazy"><figcaption><span>02 / La cucina</span><h3>Un cuore tutto italiano.</h3></figcaption></figure>
+        </div>
+        <div class="identity-grid"><article><span class="detail-number">I.</span><h3>Cucina italiana</h3><p>Pizza e ispirazioni della tradizione, al centro della visione gastronomica di JOIA.</p></article><article><span class="detail-number">II.</span><h3>Spirito di Capri</h3><p>Un'atmosfera luminosa, tra dettagli blu e un'eleganza mediterranea spontanea.</p></article><article><span class="detail-number">III.</span><h3>Ospitalità e convivialità</h3><p>La tavola come punto d'incontro, dove il cibo diventa un'esperienza da condividere.</p></article></div>
       </div>
     </section>
 
-    <!-- ORARI + CONTATTI -->
-    <section class="visit" id="orari">
-      <div class="container visit-inner">
-        <div class="section-head">
-          <p class="eyebrow eyebrow-yellow">Vieni a trovarci</p>
-          <h2>Orari &amp; contatti</h2>
-        </div>
+    <section class="partner2" id="partner">
+      <div class="shell partner-grid">
+        <div><p class="kicker">03 — Cresci con noi</p><h2>Le belle idee<br>crescono <em>insieme.</em></h2></div>
+        <div class="partner-copy"><p>Cerchiamo imprenditori e professionisti che condividano la visione JOIA e vogliano investire nel suo sviluppo.</p><p>Capitale e partecipazione al progetto, con la gestione operativa quotidiana affidata al team JOIA. Quote e condizioni da definire insieme.</p><a class="button button-light" href="partner.html">Diventa partner <span aria-hidden="true">↗</span></a></div>
+      </div>
+      <span class="partner-watermark" aria-hidden="true">JOIA</span>
+    </section>
 
-        <div class="visit-grid">
-          <div class="card hours reveal">
-            <h3>Orari di apertura</h3>
-            <!-- TODO: orari reali dal cliente -->
-            <dl>
-              <div><dt>Lunedì</dt><dd>Chiuso</dd></div>
-              <div><dt>Martedì – Venerdì</dt><dd>12:00 – 15:00 · 19:00 – 23:00</dd></div>
-              <div><dt>Sabato</dt><dd>12:00 – 23:30</dd></div>
-              <div><dt>Domenica</dt><dd>12:00 – 22:00</dd></div>
-            </dl>
-            <p class="today" id="today-status" hidden></p>
-          </div>
-
-          <div class="card contacts reveal" id="contatti">
-            <h3>Dove siamo</h3>
-            <!-- TODO: indirizzo, telefono, email e social reali -->
-            <address>
-              <p class="contact-row">
-                <span class="label">Indirizzo</span>
-                Via Esempio 1, 00000 Città
-              </p>
-              <p class="contact-row">
-                <span class="label">Telefono</span>
-                <a href="tel:+390000000000">+39 000 000 0000</a>
-              </p>
-              <p class="contact-row">
-                <span class="label">Email</span>
-                <a href="mailto:ciao@joiapastabar.it">ciao@joiapastabar.it</a>
-              </p>
-              <p class="contact-row">
-                <span class="label">Social</span>
-                <a href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a>
-              </p>
-            </address>
-            <a class="btn btn-yellow"
-               href="https://www.google.com/maps/search/?api=1&query=Via+Esempio+1"
-               target="_blank" rel="noopener">Apri in Google Maps</a>
-          </div>
-
-          <div class="map reveal">
-            <!-- TODO: sostituire la query con l'indirizzo reale -->
-            <iframe
-              title="Mappa JOIA Pasta Bar"
-              src="https://www.google.com/maps?q=Via+Esempio+1&output=embed"
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"></iframe>
-          </div>
-        </div>
+    <section class="shell section contact2" id="contatti">
+      <p class="kicker">Iniziamo da una conversazione</p>
+      <h2>Portiamo un po' di<br><em>joia nel tuo prossimo progetto.</em></h2>
+      <p>Per conoscere JOIA o parlare di una possibile collaborazione, scrivici.</p>
+      <a class="contact-email" href="mailto:info@joia-pizzeria.com?subject=Informazioni%20sul%20progetto%20JOIA">info@joia-pizzeria.com<span aria-hidden="true">↗</span></a>
+      <div class="contact-whatsapp">
+        <a class="button" href="https://wa.me/34624633279?text=Ciao%21%20Vorrei%20ricevere%20informazioni%20sul%20progetto%20JOIA." target="_blank" rel="noopener noreferrer">Scrivici su WhatsApp <span aria-hidden="true">↗</span></a>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="brand brand-footer">
-        <span class="brand-name">JOIA</span>
-        <span class="brand-sub">Pasta Bar</span>
-      </div>
-      <div class="tricolore" aria-hidden="true"><i></i><i></i><i></i></div>
-      <p class="footer-tag">Italian pasta. Joia style.</p>
-      <p class="footer-legal">© <span id="year"></span> JOIA Pasta Bar · P.IVA 00000000000</p>
-    </div>
+  <footer class="footer2">
+    <div class="shell footer-top"><a class="logo" href="#top" aria-label="JOIA Pizza Bar, torna in alto"><img src="assets/img/joia-logo-pdf.png" alt="JOIA Tenerife Pizza Bar" width="607" height="430" loading="lazy"></a><p>Italian soul.<br><em>Mediterranean spirit.</em></p><a class="text-link" href="#top">Torna su <span aria-hidden="true">↑</span></a></div>
+    <div class="shell footer-bottom"><span>© <span id="year2">2026</span> JOIA Pizza Bar</span><span>The joy of pizza.</span></div>
   </footer>
-
-  <script src="assets/js/main.js" defer></script>
 </body>
 </html>
