@@ -87,7 +87,7 @@ def generate(lang, page):
     metadata += [f'<link rel="alternate" hreflang="{target}" href="{ORIGIN}{route(target, page)}">' for target in LANGUAGES]
     metadata.append(f'<link rel="alternate" hreflang="x-default" href="{ORIGIN}{route("en", page)}">')
     image = ORIGIN + '/assets/img/' + ('joia-terrazza.jpg' if page == 'home' else 'nduja-stracciatella.jpg')
-    properties = {'og:type': 'website', 'og:site_name': 'JOIA', 'og:title': title, 'og:description': description,
+    properties = {'og:type': 'website', 'og:site_name': 'JOIA Pizzeria Contemporanea', 'og:title': title, 'og:description': description,
                   'og:url': url, 'og:image': image, 'og:locale': {'en': 'en_GB', 'it': 'it_IT', 'es': 'es_ES'}[lang]}
     metadata += [f'<meta property="{key}" content="{html.escape(value, quote=True)}">' for key, value in properties.items()]
     metadata += [f'<meta property="og:locale:alternate" content="{locale}">' for target, locale in [('en', 'en_GB'), ('it', 'it_IT'), ('es', 'es_ES')] if target != lang]
@@ -97,7 +97,7 @@ def generate(lang, page):
                  f'<meta name="twitter:image" content="{image}">']
     structured = {'@context': 'https://schema.org', '@type': 'WebPage', 'name': title,
                   'description': description, 'url': url, 'inLanguage': lang,
-                  'isPartOf': {'@type': 'WebSite', 'name': 'JOIA', 'url': ORIGIN + '/', 'inLanguage': list(LANGUAGES)}}
+                  'isPartOf': {'@type': 'WebSite', 'name': 'JOIA Pizzeria Contemporanea', 'url': ORIGIN + '/', 'inLanguage': list(LANGUAGES)}}
     metadata.append('<script type="application/ld+json">' + json.dumps(structured, ensure_ascii=False).replace('<', '\\u003c') + '</script>')
     source = source.replace('  <meta name="theme-color"', '  ' + '\n  '.join(metadata) + '\n  <meta name="theme-color"', 1)
     target = ROOT / route(lang, page).lstrip('/')
