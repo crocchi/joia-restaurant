@@ -52,7 +52,13 @@ for name, page in pages.items():
         assert alternates[target] == ORIGIN + '/' + suffix
     selectors = [a for t,a in page.nodes if t == 'a' and a.get('hreflang')]
     assert len(selectors) == 3 and len([a for a in selectors if a.get('aria-current') == 'true']) == 1
-    assert page.jsonld[0]['inLanguage'] == lang and page.jsonld[0]['url'] == expected
+    items = page.jsonld[0] if isinstance(page.jsonld[0], list) else [page.jsonld[0]]
+    webpage = next(i for i in items if i['@type'] == 'WebPage')
+    assert webpage['inLanguage'] == lang and webpage['url'] == expected
+    assert not name.endswith('index.html') or any(i['@type'] == 'Restaurant' for i in items), (name, 'Missing Restaurant data')
+    text = page.path.read_text()
+    for old_brand in ('Pasta Bar', 'Pizza Bar', 'nel PDF'):
+        assert old_brand not in text, (name, 'Outdated brand text', old_brand)
     for tag, attrs in page.nodes:
         for attr in ('href','src'):
             if attr not in attrs:

@@ -30,8 +30,8 @@ Upload the HTML pages, `it/`, `es/`, `assets/`, `robots.txt` and `sitemap.xml` t
 
 The unused original demo `index-other.html` is marked `noindex` and omitted from the sitemap. Source and script directories are excluded from crawling. Do not submit demo or source pages to Search Console.
 
-## Existing content to review
+## Restaurant information
 
-The home presents **JOIA Pizza Bar**, while the existing partner page presents **JOIA Pasta Bar**. Their concepts have been preserved rather than rewritten. Both now use the home email `info@joia-pizzeria.com`. The partner footer still contains the original placeholder VAT ID (`00000000000`); replace it with the verified legal information before publishing.
+All pages use the single brand **JOIA Pizzeria Contemporanea** (Callejón Gonzalo 2, 38650 Los Cristianos, Arona, Tenerife). The address and phone appear in the home contact section, and the home pages carry `Restaurant` structured data defined in `RESTAURANT` in `scripts/build_site.py`. Opening hours are not published yet because public listings disagree; add `openingHoursSpecification` there once confirmed. The partner footer still contains the placeholder VAT ID (`00000000000`); replace it with the verified legal information before publishing.
 
 Deployment and submission of the sitemap to Search Console are separate from this local implementation.

@@ -20,11 +20,32 @@ MESSAGES = {
     'it': ('Informazioni sul progetto JOIA', 'Ciao! Vorrei ricevere informazioni sul progetto JOIA.'),
     'es': ('Información sobre el proyecto JOIA', '¡Hola! Me gustaría recibir información sobre el proyecto JOIA.'),
 }
-UNTRANSLATED = {'JOIA Pizza Bar', 'JOIA', 'Pasta Bar', 'JOIA Tenerife Pizza Bar', 'Italian soul. Mediterranean spirit.',
-                'Italian soul.', 'Mediterranean spirit.', 'Italian pasta. Joia style.',
+UNTRANSLATED = {'JOIA Pizzeria Contemporanea', 'JOIA', 'Pizzeria', 'JOIA Pizzeria Contemporanea Tenerife', 'Italian soul. Mediterranean spirit.',
+                'Italian soul.', 'Mediterranean spirit.',
+                'Callejón Gonzalo 2, 38650 Los Cristianos (Arona), Tenerife', '·', '+34 641 99 74 02',
                 'The joy of pizza', 'The joy of pizza.', 'THE JOY', 'of', 'PIZZA',
                 '01 / JOIA', 'I.', 'II.', 'III.', '01', '02', '03', '©', '2026', '↗', '↑', '✳',
                 'info@joia-pizzeria.com'}
+
+
+RESTAURANT = {
+    'name': 'JOIA Pizzeria Contemporanea',
+    'telephone': '+34641997402',
+    'email': 'info@joia-pizzeria.com',
+    'address': {'@type': 'PostalAddress', 'streetAddress': 'Callejón Gonzalo 2', 'postalCode': '38650',
+                'addressLocality': 'Los Cristianos, Arona', 'addressRegion': 'Santa Cruz de Tenerife', 'addressCountry': 'ES'},
+    'geo': {'@type': 'GeoCoordinates', 'latitude': 28.051, 'longitude': -16.717},
+    'servesCuisine': ['Pizza', 'Italian'],
+    'priceRange': '€10–20',
+    'sameAs': ['https://www.tripadvisor.com/Restaurant_Review-g230096-d33242851-Reviews-Joia_Pizzeria_Contemporanea-Arona_Tenerife_Canary_Islands.html'],
+}
+
+
+def restaurant(lang, url):
+    """Restaurant structured data for local search. Opening hours are left out until confirmed."""
+    return {'@context': 'https://schema.org', '@type': 'Restaurant', '@id': ORIGIN + '/#restaurant', 'url': ORIGIN + '/',
+            'image': [ORIGIN + '/assets/img/' + name for name in ('joia-terrazza.jpg', 'joia-interni.jpg', 'joia-forno.jpg')],
+            'mainEntityOfPage': url, **RESTAURANT}
 
 
 def route(lang, page):
@@ -86,7 +107,7 @@ def generate(lang, page):
     metadata = [f'<link rel="canonical" href="{url}">']
     metadata += [f'<link rel="alternate" hreflang="{target}" href="{ORIGIN}{route(target, page)}">' for target in LANGUAGES]
     metadata.append(f'<link rel="alternate" hreflang="x-default" href="{ORIGIN}{route("en", page)}">')
-    image = ORIGIN + '/assets/img/' + ('joia-terrazza.jpg' if page == 'home' else 'nduja-stracciatella.jpg')
+    image = ORIGIN + '/assets/img/' + ('joia-terrazza.jpg' if page == 'home' else 'joia-forno.jpg')
     properties = {'og:type': 'website', 'og:site_name': 'JOIA Pizzeria Contemporanea', 'og:title': title, 'og:description': description,
                   'og:url': url, 'og:image': image, 'og:locale': {'en': 'en_GB', 'it': 'it_IT', 'es': 'es_ES'}[lang]}
     metadata += [f'<meta property="{key}" content="{html.escape(value, quote=True)}">' for key, value in properties.items()]
@@ -98,6 +119,8 @@ def generate(lang, page):
     structured = {'@context': 'https://schema.org', '@type': 'WebPage', 'name': title,
                   'description': description, 'url': url, 'inLanguage': lang,
                   'isPartOf': {'@type': 'WebSite', 'name': 'JOIA Pizzeria Contemporanea', 'url': ORIGIN + '/', 'inLanguage': list(LANGUAGES)}}
+    if page == 'home':
+        structured = [structured, restaurant(lang, url)]
     metadata.append('<script type="application/ld+json">' + json.dumps(structured, ensure_ascii=False).replace('<', '\\u003c') + '</script>')
     source = source.replace('  <meta name="theme-color"', '  ' + '\n  '.join(metadata) + '\n  <meta name="theme-color"', 1)
     target = ROOT / route(lang, page).lstrip('/')
