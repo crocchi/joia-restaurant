@@ -108,7 +108,7 @@ def generate(lang, page):
     source = source.replace('</head>', f'  <link rel="stylesheet" href="{asset_prefix}css/languages.css">\n</head>')
     subject, message = MESSAGES[lang]
     source = re.sub(r'href="mailto:[^"]+"', f'href="mailto:joiatenerife@hotmail.com?subject={quote(subject)}"', source)
-    source = re.sub(r'href="https://wa.me/[^"]+"', f'href="https://wa.me/34624633279?text={quote(message)}"', source)
+    source = re.sub(r'href="https://wa.me/[^"]+"', f'href="https://wa.me/34641997402?text={quote(message)}"', source)
     title = html.unescape(re.search(r'<title>(.*?)</title>', source)[1])
     description = html.unescape(re.search(r'<meta name="description" content="([^"]+)"', source)[1])
     url = ORIGIN + route(lang, page)
