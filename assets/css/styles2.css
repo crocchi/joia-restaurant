@@ -78,6 +78,9 @@ h2 { font-size: clamp(34px, 3.7vw, 50px); line-height: 1.18; letter-spacing: -.0
 .contact-email { display: inline-block; font-size: clamp(17px, 2.5vw, 27px); color: var(--blue); text-decoration: none; border-bottom: 1px solid #a0bada; padding-bottom: 10px; margin-top: 25px; overflow-wrap: anywhere; }
 .contact-email span { padding-left: 12px; }
 .contact-whatsapp { margin-top: 28px; }
+.tripadvisor-badge { display: flex; justify-content: center; margin-top: 30px; }
+.tripadvisor-badge ul { list-style: none; margin: 0; padding: 0; }
+.tripadvisor-badge img { display: block; max-width: 160px; height: auto; }
 .opening-hours { margin: 34px auto 0; max-width: 320px; }
 .opening-hours h3 { font-family: var(--sans); font-size: 10px; letter-spacing: .18em; text-transform: uppercase; font-weight: 600; color: var(--blue); margin-bottom: 14px; }
 .opening-hours table { width: 100%; border-collapse: collapse; font-size: 14px; color: var(--ink); }

@@ -25,7 +25,7 @@ UNTRANSLATED = {'JOIA Pizzeria Contemporanea', 'JOIA', 'Pizzeria', 'JOIA Pizzeri
                 'Callejón Gonzalo 2, 38650 Los Cristianos (Arona), Tenerife', '·', '+34 641 99 74 02',
                 'The joy of pizza', 'The joy of pizza.', 'THE JOY', 'of', 'PIZZA',
                 '01 / JOIA', 'I.', 'II.', 'III.', '01', '02', '03', '©', '2026', '↗', '↑', '✳',
-                'joiatenerife@hotmail.com', '13:00–22:00', '17:00–22:00', '13:00–23:00'}
+                'joiatenerife@hotmail.com', '13:00–22:00', '17:00–22:00', '13:00–23:00', 'Tripadvisor Travellers’ Choice 2026'}
 
 
 RESTAURANT = {
@@ -40,6 +40,7 @@ RESTAURANT = {
     'legalName': 'Joia Hospitality Group S.L.',
     'taxID': 'B21895008',
     'hasMenu': 'https://menu.joia-pizzeria.com/',
+    'award': 'Tripadvisor Travellers’ Choice 2026',
     'openingHoursSpecification': [
         {'@type': 'OpeningHoursSpecification', 'dayOfWeek': ['Monday', 'Tuesday', 'Thursday', 'Friday', 'Saturday'], 'opens': '13:00', 'closes': '22:00'},
         {'@type': 'OpeningHoursSpecification', 'dayOfWeek': ['Wednesday'], 'opens': '17:00', 'closes': '22:00'},
@@ -106,6 +107,8 @@ def generate(lang, page):
     source = source.replace('href="index2.html"', 'href="./"')
     source = source.replace('</nav>', '</nav>\n      ' + language_switcher(lang, page), 1)
     source = source.replace('</head>', f'  <link rel="stylesheet" href="{asset_prefix}css/languages.css">\n</head>')
+    tripadvisor = {'en': ('www.tripadvisor.com', 'en_UK'), 'it': ('www.tripadvisor.it', 'it'), 'es': ('www.tripadvisor.es', 'es')}[lang]
+    source = source.replace('https://www.tripadvisor.it/', f'https://{tripadvisor[0]}/').replace('&amp;lang=it&amp;', f'&amp;lang={tripadvisor[1]}&amp;')
     subject, message = MESSAGES[lang]
     source = re.sub(r'href="mailto:[^"]+"', f'href="mailto:joiatenerife@hotmail.com?subject={quote(subject)}"', source)
     source = re.sub(r'href="https://wa.me/[^"]+"', f'href="https://wa.me/34641997402?text={quote(message)}"', source)
