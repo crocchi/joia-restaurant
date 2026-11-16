@@ -56,6 +56,7 @@ for name, page in pages.items():
     webpage = next(i for i in items if i['@type'] == 'WebPage')
     assert webpage['inLanguage'] == lang and webpage['url'] == expected
     assert not name.endswith('index.html') or any(i['@type'] == 'Restaurant' for i in items), (name, 'Missing Restaurant data')
+    assert not name.endswith('index.html') or all(i.get('openingHoursSpecification') and i.get('hasMenu') for i in items if i['@type'] == 'Restaurant'), (name, 'Missing hours or menu')
     text = page.path.read_text()
     for old_brand in ('Pasta Bar', 'Pizza Bar', 'nel PDF'):
         assert old_brand not in text, (name, 'Outdated brand text', old_brand)

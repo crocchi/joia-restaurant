@@ -32,6 +32,6 @@ The unused original demo `index-other.html` is marked `noindex` and omitted from
 
 ## Restaurant information
 
-All pages use the single brand **JOIA Pizzeria Contemporanea** (Callejón Gonzalo 2, 38650 Los Cristianos, Arona, Tenerife). The address and phone appear in the home contact section, and the home pages carry `Restaurant` structured data defined in `RESTAURANT` in `scripts/build_site.py`. Opening hours are not published yet because public listings disagree; add `openingHoursSpecification` there once confirmed. Contact email: `joiatenerife@hotmail.com`. Tax ID (NIF): B21895008.
+All pages use the single brand **JOIA Pizzeria Contemporanea** (Callejón Gonzalo 2, 38650 Los Cristianos, Arona, Tenerife). The address and phone appear in the home contact section, and the home pages carry `Restaurant` structured data defined in `RESTAURANT` in `scripts/build_site.py`. Opening hours (Mon, Tue, Thu–Sat 13:00–22:00; Wed 17:00–22:00; Sun 13:00–23:00) appear in the home contact section and in `openingHoursSpecification`. The menu is hosted at https://menu.joia-pizzeria.com/ (redirects to caprimenu.com) and linked from the nav, the hero button and `hasMenu`. Legal entity: Joia Hospitality Group S.L. Contact email: `joiatenerife@hotmail.com`. Tax ID (NIF): B21895008.
 
 Deployment and submission of the sitemap to Search Console are separate from this local implementation.

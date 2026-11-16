@@ -25,7 +25,7 @@ UNTRANSLATED = {'JOIA Pizzeria Contemporanea', 'JOIA', 'Pizzeria', 'JOIA Pizzeri
                 'Callejón Gonzalo 2, 38650 Los Cristianos (Arona), Tenerife', '·', '+34 641 99 74 02',
                 'The joy of pizza', 'The joy of pizza.', 'THE JOY', 'of', 'PIZZA',
                 '01 / JOIA', 'I.', 'II.', 'III.', '01', '02', '03', '©', '2026', '↗', '↑', '✳',
-                'joiatenerife@hotmail.com'}
+                'joiatenerife@hotmail.com', '13:00–22:00', '17:00–22:00', '13:00–23:00'}
 
 
 RESTAURANT = {
@@ -37,15 +37,23 @@ RESTAURANT = {
     'geo': {'@type': 'GeoCoordinates', 'latitude': 28.051, 'longitude': -16.717},
     'servesCuisine': ['Pizza', 'Italian'],
     'priceRange': '€10–20',
+    'legalName': 'Joia Hospitality Group S.L.',
+    'taxID': 'B21895008',
+    'hasMenu': 'https://menu.joia-pizzeria.com/',
+    'openingHoursSpecification': [
+        {'@type': 'OpeningHoursSpecification', 'dayOfWeek': ['Monday', 'Tuesday', 'Thursday', 'Friday', 'Saturday'], 'opens': '13:00', 'closes': '22:00'},
+        {'@type': 'OpeningHoursSpecification', 'dayOfWeek': ['Wednesday'], 'opens': '17:00', 'closes': '22:00'},
+        {'@type': 'OpeningHoursSpecification', 'dayOfWeek': ['Sunday'], 'opens': '13:00', 'closes': '23:00'},
+    ],
     'sameAs': ['https://www.tripadvisor.com/Restaurant_Review-g230096-d33242851-Reviews-Joia_Pizzeria_Contemporanea-Arona_Tenerife_Canary_Islands.html'],
 }
 
 
 def restaurant(lang, url):
-    """Restaurant structured data for local search. Opening hours are left out until confirmed."""
+    """Restaurant structured data for local search."""
     return {'@context': 'https://schema.org', '@type': 'Restaurant', '@id': ORIGIN + '/#restaurant', 'url': ORIGIN + '/',
             'image': [ORIGIN + '/assets/img/' + name for name in ('joia-terrazza.jpg', 'joia-interni.jpg', 'joia-forno.jpg')],
-            'mainEntityOfPage': url, **RESTAURANT}
+            'logo': ORIGIN + '/assets/img/joia-logo-pdf.png', 'mainEntityOfPage': url, **RESTAURANT}
 
 
 def route(lang, page):
