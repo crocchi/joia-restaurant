@@ -25,13 +25,13 @@ UNTRANSLATED = {'JOIA Pizzeria Contemporanea', 'JOIA', 'Pizzeria', 'JOIA Pizzeri
                 'Callejón Gonzalo 2, 38650 Los Cristianos (Arona), Tenerife', '·', '+34 641 99 74 02',
                 'The joy of pizza', 'The joy of pizza.', 'THE JOY', 'of', 'PIZZA',
                 '01 / JOIA', 'I.', 'II.', 'III.', '01', '02', '03', '©', '2026', '↗', '↑', '✳',
-                'info@joia-pizzeria.com'}
+                'joiatenerife@hotmail.com'}
 
 
 RESTAURANT = {
     'name': 'JOIA Pizzeria Contemporanea',
     'telephone': '+34641997402',
-    'email': 'info@joia-pizzeria.com',
+    'email': 'joiatenerife@hotmail.com',
     'address': {'@type': 'PostalAddress', 'streetAddress': 'Callejón Gonzalo 2', 'postalCode': '38650',
                 'addressLocality': 'Los Cristianos, Arona', 'addressRegion': 'Santa Cruz de Tenerife', 'addressCountry': 'ES'},
     'geo': {'@type': 'GeoCoordinates', 'latitude': 28.051, 'longitude': -16.717},
@@ -99,7 +99,7 @@ def generate(lang, page):
     source = source.replace('</nav>', '</nav>\n      ' + language_switcher(lang, page), 1)
     source = source.replace('</head>', f'  <link rel="stylesheet" href="{asset_prefix}css/languages.css">\n</head>')
     subject, message = MESSAGES[lang]
-    source = re.sub(r'href="mailto:[^"]+"', f'href="mailto:info@joia-pizzeria.com?subject={quote(subject)}"', source)
+    source = re.sub(r'href="mailto:[^"]+"', f'href="mailto:joiatenerife@hotmail.com?subject={quote(subject)}"', source)
     source = re.sub(r'href="https://wa.me/[^"]+"', f'href="https://wa.me/34624633279?text={quote(message)}"', source)
     title = html.unescape(re.search(r'<title>(.*?)</title>', source)[1])
     description = html.unescape(re.search(r'<meta name="description" content="([^"]+)"', source)[1])
