@@ -1,0 +1,10 @@
+# JOIA canonical URL redirects
+RewriteEngine On
+
+# Redirect explicit index.html requests, not internal directory indexes.
+RewriteCond %{THE_REQUEST} \s/+((?:it/|es/)?)index\.html[?\s] [NC]
+RewriteRule ^((?:it/|es/)?)index\.html$ https://www.joia-pizzeria.com/$1 [R=301,L]
+
+# Preserve the full path and query string on the canonical host.
+RewriteCond %{HTTP_HOST} ^joia-pizzeria\.com(?::[0-9]+)?$ [NC]
+RewriteRule ^ https://www.joia-pizzeria.com%{REQUEST_URI} [R=301,L]
